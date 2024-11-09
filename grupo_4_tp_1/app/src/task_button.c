@@ -34,6 +34,7 @@
 
 /********************** inclusions *******************************************/
 
+#include <ao_ui.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -44,7 +45,6 @@
 #include "logger.h"
 #include "dwt.h"
 
-#include "task_ui.h"
 #include "task_button.h"
 
 /********************** macros and definitions *******************************/

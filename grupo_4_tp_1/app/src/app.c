@@ -1,4 +1,6 @@
-#include <task_led.h>
+#include <ao_led.h>
+#include <ao_led.h>
+#include <ao_ui.h>
 #include "main.h"
 #include "cmsis_os.h"
 #include "logger.h"
@@ -6,8 +8,6 @@
 #include "board.h"
 
 #include "task_button.h"
-#include "task_led.h"
-#include "task_ui.h"
 
 ao_ui_handle_t ao_ui;
 ao_led_handle_t ao_red_led_h;

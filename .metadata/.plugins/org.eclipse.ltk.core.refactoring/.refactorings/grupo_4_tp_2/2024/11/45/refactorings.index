@@ -1,2 +1,6 @@
 1731173970019	Rename resource 'task_red_led.h'
 1731173989861	Rename resource 'task_red_led.c'
+1731175124973	Rename resource 'task_led.c'
+1731175132436	Rename resource 'task_ui.c'
+1731175143919	Rename resource 'task_led.h'
+1731175152835	Rename resource 'task_ui.h'
