@@ -13,24 +13,18 @@ extern "C" {
 #include "board.h"
 #include "cmsis_os.h"
 #include "stm32f4xx_hal.h"
+#include "app.h"
 
-/********************** macros ***********************************************/
+/********************** forward declarations *********************************/
+
 
 /********************** typedef **********************************************/
 
-typedef struct {
-    QueueHandle_t hqueue;
-    GPIO_TypeDef * led_port;
-	uint16_t led_pin;
-} ao_led_handle_t;
-
-/********************** external data declaration ****************************/
 
 /********************** external functions declaration ***********************/
 
 void ao_led_init(ao_led_handle_t* hao, GPIO_TypeDef* led_port, uint16_t led_pin);
-
-bool ao_led_send(ao_led_handle_t* hao);
+bool ao_led_send(msg_t* hao);
 
 /********************** End of CPP guard *************************************/
 #ifdef __cplusplus
@@ -39,4 +33,3 @@ bool ao_led_send(ao_led_handle_t* hao);
 
 #endif /* TASK_LED_H_ */
 /********************** end of file ******************************************/
-

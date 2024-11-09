@@ -1,10 +1,10 @@
-15:00:41 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+17:31:08 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
 make -j4 all 
 arm-none-eabi-size  grupo_4_tp_2.elf 
    text	   data	    bss	    dec	    hex	filename
-  32240	    124	  19932	  52296	   cc48	grupo_4_tp_2.elf
+  34808	    124	  19932	  54864	   d650	grupo_4_tp_2.elf
 Finished building: default.size.stdout
  
 
-15:00:41 Build Finished. 0 errors, 0 warnings. (took 627ms)
+17:31:09 Build Finished. 0 errors, 0 warnings. (took 636ms)
 
