@@ -1,0 +1,24 @@
+!SESSION 2024-11-08 22:14:59.757 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-11-08 22:15:19.892
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-11-08 22:15:19.893
+!MESSAGE Log4j2 initialized with config file /home/felipe/Desktop/RTOS_TP2/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-11-08 22:15:23.866
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-08 22:16:46.290
+!MESSAGE Indexed 'grupo_4_tp_1' (45 sources, 142 headers) in 3.65 sec: 17,234 declarations; 86,833 references; 1 unresolved inclusions; 202 syntax errors; 239 unresolved names (0.23%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-08 22:17:06.573
+!MESSAGE Indexed 'grupo_4_tp_1' (45 sources, 142 headers) in 2.47 sec: 17,234 declarations; 86,833 references; 1 unresolved inclusions; 202 syntax errors; 239 unresolved names (0.23%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-08 22:17:14.701
+!MESSAGE Indexed 'grupo_4_tp_2' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)

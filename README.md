@@ -1,1 +1,10 @@
-# RTOS_TP2
+## Integrantes
+
+- Gerardo Vilcamiza
+- Ramiro Sanes
+- Felipe Saravia
+
+## Archivos soporte
+
+
+
