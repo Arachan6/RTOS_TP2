@@ -18,6 +18,14 @@ extern ao_led_handle_t ao_red_led_h;
 extern ao_led_handle_t ao_green_led_h;
 extern ao_led_handle_t ao_blue_led_h;
 
+static void callback_process_completed_(msg_t* pmsg) {
+  memory_pool_block_put(hmp, (void*)pmsg);
+  LOGGER_INFO("Memoria liberada desde button");
+  msg_wip_--;
+  LOGGER_INFO("Mensajes en proceso: %d", msg_wip_);
+}
+
+
 void task_ui(void *argument){
 	ao_ui_handle_t *huiao = (ao_ui_handle_t *)argument;
 	button_type_t button_press_type;
@@ -27,7 +35,20 @@ void task_ui(void *argument){
 			switch (button_press_type){
 				case BUTTON_TYPE_PULSE:
 					LOGGER_INFO("UI red led blink");
-					ao_led_send(&ao_red_led_h);
+					msg_t* pmsg = (msg_t*)pvPortMalloc(sizeof(msg_t));
+					if(NULL != pmsg) {
+						LOGGER_INFO("Memoria alocada: %d", sizeof(msg_t));
+						pmsg->led_h = &ao_red_led_h;
+						if(pdPASS == ao_led_send(&pmsg)) {
+							LOGGER_INFO("Mensaje enviado");
+						} else {
+							LOGGER_INFO("Mensaje no enviado");
+							vPortFree((void*)pmsg);
+							LOGGER_INFO("Memoria liberada desde button");
+						}
+					} else {
+					  LOGGER_INFO("Memoria insuficiente");
+					}
 					break;
 				case BUTTON_TYPE_SHORT:
 					LOGGER_INFO("UI green led blink");
