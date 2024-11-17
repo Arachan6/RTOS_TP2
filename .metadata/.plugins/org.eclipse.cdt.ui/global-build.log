@@ -1,4 +1,304 @@
-17:31:05 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+21:15:45 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/ao_ui.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_ui.d" -MT"app/src/ao_ui.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_ui.o"
+../app/src/ao_ui.c: In function 'task_ui':
+../app/src/ao_ui.c:42:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   42 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+In file included from ../app/src/ao_ui.c:1:
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+../app/src/ao_ui.c:84:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+arm-none-eabi-gcc -o "grupo_4_tp_2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/felipe/Desktop/RTOS_TP2/grupo_4_tp_1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="grupo_4_tp_2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.15.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: grupo_4_tp_2.elf has a LOAD segment with RWX permissions
+Finished building target: grupo_4_tp_2.elf
+ 
+arm-none-eabi-size  grupo_4_tp_2.elf 
+arm-none-eabi-objdump -h -S grupo_4_tp_2.elf  > "grupo_4_tp_2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34892	    124	  19932	  54948	   d6a4	grupo_4_tp_2.elf
+Finished building: default.size.stdout
+ 
+Finished building: grupo_4_tp_2.list
+ 
+21:15:49 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+make -j4 all 
+arm-none-eabi-size  grupo_4_tp_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34892	    124	  19932	  54948	   d6a4	grupo_4_tp_2.elf
+Finished building: default.size.stdout
+ 
+21:24:57 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/ao_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_led.d" -MT"app/src/ao_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_led.o"
+arm-none-eabi-gcc "../app/src/ao_ui.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_ui.d" -MT"app/src/ao_ui.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_ui.o"
+In file included from ../app/src/ao_led.c:9:
+../app/src/ao_led.c: In function 'ao_led_send':
+../app/src/ao_led.c:25:21: warning: format '%d' expects argument of type 'int', but argument 4 has type 'UBaseType_t' {aka 'long unsigned int'} [-Wformat=]
+   25 |         LOGGER_INFO("Queue length: %d", uxQueueMessagesWaiting(lh->hqueue));
+      |                     ^~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                         |
+      |                                         UBaseType_t {aka long unsigned int}
+../app/inc/logger.h:62:75: note: in definition of macro 'LOGGER_LOG'
+   62 |         logger_msg_len = snprintf(logger_msg, (LOGGER_CONFIG_MAXLEN - 1), __VA_ARGS__);\
+      |                                                                           ^~~~~~~~~~~
+../app/src/ao_led.c:25:9: note: in expansion of macro 'LOGGER_INFO'
+   25 |         LOGGER_INFO("Queue length: %d", uxQueueMessagesWaiting(lh->hqueue));
+      |         ^~~~~~~~~~~
+../app/src/ao_led.c:25:37: note: format string is defined here
+   25 |         LOGGER_INFO("Queue length: %d", uxQueueMessagesWaiting(lh->hqueue));
+      |                                    ~^
+      |                                     |
+      |                                     int
+      |                                    %ld
+../app/src/ao_ui.c: In function 'task_ui':
+../app/src/ao_ui.c:42:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   42 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+In file included from ../app/src/ao_ui.c:1:
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+../app/src/ao_ui.c:66:72: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   66 |                                                 if(true == ao_led_send(&pmsg)) {
+      |                                                                        ^~~~~
+      |                                                                        |
+      |                                                                        msg_t ** {aka struct msg_s **}
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+../app/src/ao_ui.c:84:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+arm-none-eabi-gcc -o "grupo_4_tp_2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/felipe/Desktop/RTOS_TP2/grupo_4_tp_1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="grupo_4_tp_2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.15.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: grupo_4_tp_2.elf has a LOAD segment with RWX permissions
+Finished building target: grupo_4_tp_2.elf
+ 
+arm-none-eabi-size  grupo_4_tp_2.elf 
+arm-none-eabi-objdump -h -S grupo_4_tp_2.elf  > "grupo_4_tp_2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34884	    124	  19932	  54940	   d69c	grupo_4_tp_2.elf
+Finished building: default.size.stdout
+ 
+Finished building: grupo_4_tp_2.list
+ 
+21:25:27 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+make -j4 all 
+arm-none-eabi-size  grupo_4_tp_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34884	    124	  19932	  54940	   d69c	grupo_4_tp_2.elf
+Finished building: default.size.stdout
+ 
+21:25:31 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+make -j4 all 
+arm-none-eabi-size  grupo_4_tp_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34884	    124	  19932	  54940	   d69c	grupo_4_tp_2.elf
+Finished building: default.size.stdout
+ 
+21:26:11 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/ao_ui.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_ui.d" -MT"app/src/ao_ui.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_ui.o"
+../app/src/ao_ui.c: In function 'task_ui':
+../app/src/ao_ui.c:42:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   42 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+In file included from ../app/src/ao_ui.c:1:
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+In file included from ../app/src/ao_ui.c:9:
+../app/src/ao_ui.c:63:61: warning: format '%d' expects argument of type 'int', but argument 4 has type 'UBaseType_t' {aka 'long unsigned int'} [-Wformat=]
+   63 |                                                 LOGGER_INFO("Queue length: %d", uxQueueMessagesWaiting(lh->hqueue));
+      |                                                             ^~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                 |
+      |                                                                                 UBaseType_t {aka long unsigned int}
+../app/inc/logger.h:62:75: note: in definition of macro 'LOGGER_LOG'
+   62 |         logger_msg_len = snprintf(logger_msg, (LOGGER_CONFIG_MAXLEN - 1), __VA_ARGS__);\
+      |                                                                           ^~~~~~~~~~~
+../app/src/ao_ui.c:63:49: note: in expansion of macro 'LOGGER_INFO'
+   63 |                                                 LOGGER_INFO("Queue length: %d", uxQueueMessagesWaiting(lh->hqueue));
+      |                                                 ^~~~~~~~~~~
+../app/src/ao_ui.c:63:77: note: format string is defined here
+   63 |                                                 LOGGER_INFO("Queue length: %d", uxQueueMessagesWaiting(lh->hqueue));
+      |                                                                            ~^
+      |                                                                             |
+      |                                                                             int
+      |                                                                            %ld
+../app/src/ao_ui.c:85:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   85 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+arm-none-eabi-gcc -o "grupo_4_tp_2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/felipe/Desktop/RTOS_TP2/grupo_4_tp_1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="grupo_4_tp_2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.15.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: grupo_4_tp_2.elf has a LOAD segment with RWX permissions
+Finished building target: grupo_4_tp_2.elf
+ 
+arm-none-eabi-size  grupo_4_tp_2.elf 
+arm-none-eabi-objdump -h -S grupo_4_tp_2.elf  > "grupo_4_tp_2.list"
+   text	   data	    bss	    dec	    hex	filename
+  35044	    124	  19932	  55100	   d73c	grupo_4_tp_2.elf
+Finished building: default.size.stdout
+ 
+Finished building: grupo_4_tp_2.list
+ 
+21:30:08 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/ao_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_led.d" -MT"app/src/ao_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_led.o"
+arm-none-eabi-gcc "../app/src/ao_ui.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_ui.d" -MT"app/src/ao_ui.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_ui.o"
+../app/src/ao_ui.c: In function 'task_ui':
+../app/src/ao_ui.c:42:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   42 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+In file included from ../app/src/ao_ui.c:1:
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+../app/src/ao_ui.c:67:72: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   67 |                                                 if(true == ao_led_send(&pmsg)) {
+      |                                                                        ^~~~~
+      |                                                                        |
+      |                                                                        msg_t ** {aka struct msg_s **}
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+../app/src/ao_ui.c:85:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   85 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+arm-none-eabi-gcc -o "grupo_4_tp_2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/felipe/Desktop/RTOS_TP2/grupo_4_tp_1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="grupo_4_tp_2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.15.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: grupo_4_tp_2.elf has a LOAD segment with RWX permissions
+Finished building target: grupo_4_tp_2.elf
+ 
+arm-none-eabi-size  grupo_4_tp_2.elf 
+arm-none-eabi-objdump -h -S grupo_4_tp_2.elf  > "grupo_4_tp_2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34688	    124	  19932	  54744	   d5d8	grupo_4_tp_2.elf
+Finished building: default.size.stdout
+ 
+Finished building: grupo_4_tp_2.list
+ 
+21:34:16 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/ao_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_led.d" -MT"app/src/ao_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_led.o"
+arm-none-eabi-gcc "../app/src/ao_ui.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_ui.d" -MT"app/src/ao_ui.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_ui.o"
+../app/src/ao_ui.c: In function 'task_ui':
+../app/src/ao_ui.c:42:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   42 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+In file included from ../app/src/ao_ui.c:1:
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+../app/src/ao_ui.c:66:72: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   66 |                                                 if(true == ao_led_send(&pmsg)) {
+      |                                                                        ^~~~~
+      |                                                                        |
+      |                                                                        msg_t ** {aka struct msg_s **}
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+../app/src/ao_ui.c:84:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+arm-none-eabi-gcc -o "grupo_4_tp_2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/felipe/Desktop/RTOS_TP2/grupo_4_tp_1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="grupo_4_tp_2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.15.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: grupo_4_tp_2.elf has a LOAD segment with RWX permissions
+Finished building target: grupo_4_tp_2.elf
+ 
+arm-none-eabi-size  grupo_4_tp_2.elf 
+arm-none-eabi-objdump -h -S grupo_4_tp_2.elf  > "grupo_4_tp_2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34688	    124	  19932	  54744	   d5d8	grupo_4_tp_2.elf
+Finished building: default.size.stdout
+ 
+Finished building: grupo_4_tp_2.list
+ 
+21:37:10 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/ao_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_led.d" -MT"app/src/ao_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_led.o"
+arm-none-eabi-gcc "../app/src/ao_ui.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_ui.d" -MT"app/src/ao_ui.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_ui.o"
+../app/src/ao_ui.c: In function 'task_ui':
+../app/src/ao_ui.c:42:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   42 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+In file included from ../app/src/ao_ui.c:1:
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+../app/src/ao_ui.c:84:74: warning: passing argument 1 of 'ao_led_send' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                                 if(pdPASS == ao_led_send(&pmsg)) {
+      |                                                                          ^~~~~
+      |                                                                          |
+      |                                                                          msg_t ** {aka struct msg_s **}
+../app/inc/ao_led.h:27:25: note: expected 'msg_t *' {aka 'struct msg_s *'} but argument is of type 'msg_t **' {aka 'struct msg_s **'}
+   27 | bool ao_led_send(msg_t* hao);
+      |                  ~~~~~~~^~~
+arm-none-eabi-gcc -o "grupo_4_tp_2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/felipe/Desktop/RTOS_TP2/grupo_4_tp_1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="grupo_4_tp_2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.15.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: grupo_4_tp_2.elf has a LOAD segment with RWX permissions
+Finished building target: grupo_4_tp_2.elf
+ 
+arm-none-eabi-size  grupo_4_tp_2.elf 
+arm-none-eabi-objdump -h -S grupo_4_tp_2.elf  > "grupo_4_tp_2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34404	    124	  19932	  54460	   d4bc	grupo_4_tp_2.elf
+Finished building: default.size.stdout
+ 
+Finished building: grupo_4_tp_2.list
+ 
+21:39:07 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/ao_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_led.d" -MT"app/src/ao_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_led.o"
+arm-none-eabi-gcc "../app/src/ao_ui.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_ui.d" -MT"app/src/ao_ui.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_ui.o"
+arm-none-eabi-gcc -o "grupo_4_tp_2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/felipe/Desktop/RTOS_TP2/grupo_4_tp_1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="grupo_4_tp_2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.15.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: grupo_4_tp_2.elf has a LOAD segment with RWX permissions
+Finished building target: grupo_4_tp_2.elf
+ 
+arm-none-eabi-size  grupo_4_tp_2.elf 
+arm-none-eabi-objdump -h -S grupo_4_tp_2.elf  > "grupo_4_tp_2.list"
+   text	   data	    bss	    dec	    hex	filename
+  33852	    124	  19932	  53908	   d294	grupo_4_tp_2.elf
+Finished building: default.size.stdout
+ 
+Finished building: grupo_4_tp_2.list
+ 
+21:41:13 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
 make -j4 all 
 arm-none-eabi-gcc "../app/src/ao_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/ao_led.d" -MT"app/src/ao_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/src/ao_led.o"
 arm-none-eabi-gcc -o "grupo_4_tp_2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/felipe/Desktop/RTOS_TP2/grupo_4_tp_1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="grupo_4_tp_2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -8,15 +308,8 @@ Finished building target: grupo_4_tp_2.elf
 arm-none-eabi-size  grupo_4_tp_2.elf 
 arm-none-eabi-objdump -h -S grupo_4_tp_2.elf  > "grupo_4_tp_2.list"
    text	   data	    bss	    dec	    hex	filename
-  34808	    124	  19932	  54864	   d650	grupo_4_tp_2.elf
+  33888	    124	  19932	  53944	   d2b8	grupo_4_tp_2.elf
 Finished building: default.size.stdout
  
 Finished building: grupo_4_tp_2.list
- 
-17:31:08 **** Incremental Build of configuration Debug for project grupo_4_tp_2 ****
-make -j4 all 
-arm-none-eabi-size  grupo_4_tp_2.elf 
-   text	   data	    bss	    dec	    hex	filename
-  34808	    124	  19932	  54864	   d650	grupo_4_tp_2.elf
-Finished building: default.size.stdout
  

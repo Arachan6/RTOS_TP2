@@ -14,26 +14,22 @@
 
 #define LED_PERIOD_        			(1000)
 #define LED_QUEUE_LENGTH_     		(5)
-#define LED_QUEUE_ITEM_SIZE_  		(sizeof(bool))
+#define LED_QUEUE_ITEM_SIZE_  		(sizeof(msg_t *))
 
-bool ao_led_send (msg_t *hao){
-	ao_led_handle_t* lh = (ao_led_handle_t*)hao->led_h;
-	LOGGER_INFO("2");
-	if (lh->hqueue == NULL ){
-		LOGGER_INFO("cola nula");
-	}
-	return (pdPASS == xQueueSend(lh->hqueue, &hao, 0));
+bool ao_led_send (msg_t *pmsg){
+	ao_led_handle_t* lh = (ao_led_handle_t*)pmsg->led_h;
+	return (pdPASS == xQueueSend(lh->hqueue, &pmsg, 0));
 }
 
 void task_led(void *argument){
 	ao_led_handle_t *hao = (ao_led_handle_t *)argument;
 	msg_t* pmsg;
 	while (true){
-		LOGGER_INFO("6");
-		if (pdPASS == xQueueReceive(hao->hqueue, (void*)&pmsg, portMAX_DELAY)){
-			LOGGER_INFO("4");
+		if (pdPASS == xQueueReceive(hao->hqueue, &pmsg, portMAX_DELAY)){
+			HAL_GPIO_WritePin(LED_RED_PORT, LED_RED_PIN, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_GREEN_PORT, LED_GREEN_PIN, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_BLUE_PORT, LED_BLUE_PIN, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin((GPIO_TypeDef *)hao->led_port, (uint16_t)hao->led_pin, GPIO_PIN_SET);
-			LOGGER_INFO("3");
 			pmsg->callback_process(pmsg);
 		}
 	}

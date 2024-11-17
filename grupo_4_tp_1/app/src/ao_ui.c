@@ -21,7 +21,6 @@ extern ao_led_handle_t ao_green_led_h;
 extern ao_led_handle_t ao_blue_led_h;
 
 static void callback_free(msg_t* pmsg) {
-	LOGGER_INFO("AAAAA");
 	vPortFree((void*)pmsg);
 }
 
@@ -39,8 +38,7 @@ void task_ui(void *argument){
 						LOGGER_INFO("Memoria alocada: %d", sizeof(msg_t));
 						pmsg->led_h = &ao_red_led_h;
 						pmsg->callback_process = callback_free;
-						LOGGER_INFO("1");
-						if(pdPASS == ao_led_send(&pmsg)) {
+						if(pdPASS == ao_led_send(pmsg)) {
 							LOGGER_INFO("Mensaje enviado");
 						} else {
 							LOGGER_INFO("Mensaje no enviado");
@@ -57,7 +55,8 @@ void task_ui(void *argument){
 						LOGGER_INFO("Memoria alocada: %d", sizeof(msg_t));
 						pmsg->led_h = &ao_green_led_h;
 						pmsg->callback_process = callback_free;
-						if(pdPASS == ao_led_send(&pmsg)) {
+
+						if(true == ao_led_send(pmsg)) {
 							LOGGER_INFO("Mensaje enviado");
 						} else {
 							LOGGER_INFO("Mensaje no enviado");
@@ -75,7 +74,7 @@ void task_ui(void *argument){
 						LOGGER_INFO("Memoria alocada: %d", sizeof(msg_t));
 						pmsg->led_h = &ao_blue_led_h;
 						pmsg->callback_process = callback_free;
-						if(pdPASS == ao_led_send(&pmsg)) {
+						if(pdPASS == ao_led_send(pmsg)) {
 							LOGGER_INFO("Mensaje enviado");
 						} else {
 							LOGGER_INFO("Mensaje no enviado");

@@ -1,0 +1,17 @@
+18:25:01 **** Build of configuration Debug for project grupo_4_tp_2_v2 ****
+make -j4 all 
+arm-none-eabi-gcc -o "grupo_4_tp_2_v2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/felipe/Desktop/RTOS_TP2/grupo_4_tp_2_v2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="grupo_4_tp_2_v2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.15.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: grupo_4_tp_2_v2.elf has a LOAD segment with RWX permissions
+Finished building target: grupo_4_tp_2_v2.elf
+ 
+arm-none-eabi-size  grupo_4_tp_2_v2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34684	    124	  19932	  54740	   d5d4	grupo_4_tp_2_v2.elf
+arm-none-eabi-objdump -h -S grupo_4_tp_2_v2.elf  > "grupo_4_tp_2_v2.list"
+Finished building: default.size.stdout
+ 
+Finished building: grupo_4_tp_2_v2.list
+ 
+
+18:25:02 Build Finished. 0 errors, 1 warnings. (took 990ms)
+
